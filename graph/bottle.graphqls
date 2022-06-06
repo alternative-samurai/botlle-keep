@@ -1,0 +1,24 @@
+type Bottle {
+  """
+  キープボトル
+  """
+  bottleId: String!
+  bottleName: String!
+}
+type BottleListResult {
+  """
+  キープにできるボトル一覧
+  """
+  list: [Bottle!]!
+}
+
+extend type Mutation {
+  """
+  ボトルの在庫マスタを作成
+  """
+  createBottle(name: String!): IdResult
+}
+
+extend type Query {
+  BottleList: BottleListResult
+}

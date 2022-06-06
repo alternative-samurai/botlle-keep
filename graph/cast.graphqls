@@ -1,0 +1,18 @@
+type Cast {
+  """
+  キャスト名
+  """
+  castId: String!
+  castName: String!
+}
+
+extend type Mutation {
+  """
+  キャスト作成
+  """
+  createCast(name: String!): IdResult
+}
+
+# type Query {
+#   BottleList: BottleListResult
+# }

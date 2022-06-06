@@ -1,0 +1,19 @@
+type NomiNation {
+  """
+  お客様とキャストの関係
+  """
+  nomiNationId: String!
+  customerId: String!
+  castId: String!
+}
+
+extend type Mutation {
+  """
+  指名作成
+  """
+  createNomination(castId: String!, customerId: String!): IdResult
+}
+
+# type Query {
+#   BottleList: BottleListResult
+# }

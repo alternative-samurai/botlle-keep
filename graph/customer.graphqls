@@ -1,0 +1,18 @@
+type Customer {
+  """
+  お客様の名前
+  """
+  customerId: String!
+  customerName: String!
+}
+
+extend type Mutation {
+  """
+  お客様作成
+  """
+  createCustomer(name: String!): IdResult
+}
+
+# type Query {
+#   BottleList: BottleListResult
+# }
