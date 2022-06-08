@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  samurai-db:
+    image: postgres:latest
+    container_name: samurai-db
+    ports:
+      - 5432:5432
+    volumes:
+      - ./docker:/aaa
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgresp

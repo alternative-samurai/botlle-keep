@@ -21,7 +21,8 @@ model:
 resolver:
   layout: follow-schema
   dir: src/controllers
-  package: controllers
+  package: graph
+  filename_template: "{name}.controller.go"
 
 # Optional: turn on use ` + "`" + `gqlgen:"fieldName"` + "`" + ` tags in your models
 # struct_tag: json
@@ -54,7 +55,3 @@ models:
       - github.com/99designs/gqlgen/graphql.Int
       - github.com/99designs/gqlgen/graphql.Int64
       - github.com/99designs/gqlgen/graphql.Int32
-
-  DateTime:
-    model:
-      - github.com/your/repository/graph/model.DateTime

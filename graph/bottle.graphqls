@@ -1,9 +1,12 @@
+scalar Time
 type Bottle {
   """
   キープボトル
   """
   bottleId: String!
   bottleName: String!
+  createdAt: Time!
+  updatedAt: Time!
 }
 type BottleListResult {
   """

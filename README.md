@@ -1,3 +1,7 @@
 # botlle-keep
 
-aaa
+### スキーマ再生成コマンド
+
+```bash
+go generate ./...
+```

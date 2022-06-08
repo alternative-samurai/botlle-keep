@@ -2,10 +2,16 @@
 
 package model
 
+import (
+	"time"
+)
+
 type Bottle struct {
 	// キープボトル
-	BottleID   string `json:"bottleId"`
-	BottleName string `json:"bottleName"`
+	BottleID   string    `json:"bottleId"`
+	BottleName string    `json:"bottleName"`
+	CreatedAt  time.Time `json:"createdAt"`
+	UpdatedAt  time.Time `json:"updatedAt"`
 }
 
 type BottleListResult struct {
@@ -19,6 +25,10 @@ type Cast struct {
 	CastName string `json:"castName"`
 }
 
+type CastListResult struct {
+	List []*Cast `json:"list"`
+}
+
 type Customer struct {
 	// お客様の名前
 	CustomerID   string `json:"customerId"`
@@ -30,9 +40,26 @@ type IDResult struct {
 	ID string `json:"id"`
 }
 
+type NewTodo struct {
+	Text   string `json:"text"`
+	UserID string `json:"userId"`
+}
+
 type NomiNation struct {
 	// お客様とキャストの関係
 	NomiNationID string `json:"nomiNationId"`
 	CustomerID   string `json:"customerId"`
 	CastID       string `json:"castId"`
+}
+
+type Todo struct {
+	ID   string `json:"id"`
+	Text string `json:"text"`
+	Done bool   `json:"done"`
+	User *User  `json:"user"`
+}
+
+type User struct {
+	ID   string `json:"id"`
+	Name string `json:"name"`
 }

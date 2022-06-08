@@ -6,6 +6,10 @@ type Cast {
   castName: String!
 }
 
+type CastListResult {
+  list: [Cast!]!
+}
+
 extend type Mutation {
   """
   キャスト作成
@@ -13,6 +17,6 @@ extend type Mutation {
   createCast(name: String!): IdResult
 }
 
-# type Query {
-#   BottleList: BottleListResult
-# }
+extend type Query {
+  CastList: CastListResult
+}
